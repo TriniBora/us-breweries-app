@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BreweriesSubcategories from "./BreweriesSubcategories";
+import '../css/BreweriesCategories.css'
 
 function BreweriesCategories() {
   const [name, setName] = useState("");

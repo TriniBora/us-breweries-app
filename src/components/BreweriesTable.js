@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/BreweriesTable.css'
 
 import Table from "react-bootstrap/Table";
 

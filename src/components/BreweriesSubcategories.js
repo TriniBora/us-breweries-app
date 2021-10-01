@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BreweriesTable from "./BreweriesTable";
+import '../css/BreweriesSubcategories.css'
 
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";

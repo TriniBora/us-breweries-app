@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+
+  }
+
+  body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: hsla(50, 98%, 65%, .5);
+    background-image: url(img/bg-pattern.jpg);
+    background-size:300px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
