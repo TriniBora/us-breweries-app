@@ -82,8 +82,6 @@ function BreweriesSubcategories({ name, category }) {
           </Form.Select>
         </FloatingLabel>
         <br />
-
-        {console.log(selectedItem)}
         {showTable && (
           <div className="table">
             <BreweriesTable categoryData={categoryData} />

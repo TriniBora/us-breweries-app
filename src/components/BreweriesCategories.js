@@ -39,7 +39,9 @@ function BreweriesCategories() {
       <div className="categories">
         {categories.map((el) => (
           <div key={el.name} className="category" id={el.name}>
-            <h3>Search by {el.name}</h3>
+            <h3>
+              Search by <strong>{el.name.toUpperCase()}</strong>
+            </h3>
             <label>
               <input
                 type="radio"
@@ -47,13 +49,11 @@ function BreweriesCategories() {
                 name={el.name}
                 checked={name === el.name}
                 onChange={handleChange}
-              />{" "}
+              />
               <FontAwesomeIcon className="icon" id={el.icon} icon={el.icon} />
             </label>
           </div>
         ))}
-        {/* {console.log(category)}
-        {console.log(name)} */}
       </div>
       {showSelect && (
         <div className="subcategories">

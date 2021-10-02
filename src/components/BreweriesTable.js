@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/BreweriesTable.css'
+import "../css/BreweriesTable.css";
 
 import Table from "react-bootstrap/Table";
 
@@ -12,7 +12,12 @@ function Brewerie({ item }) {
         <td>{item.state}</td>
         <td>{item.city}</td>
         <td>
-          <a  id="brewery-url" href={item.website_url} target="_blank" rel="noreferrer">
+          <a
+            id="brewery-url"
+            href={item.website_url}
+            target="_blank"
+            rel="noreferrer"
+          >
             {item.website_url ? "Web Site" : ""}
           </a>
         </td>
@@ -23,8 +28,8 @@ function Brewerie({ item }) {
 
 function BreweriesTable({ categoryData }) {
   return (
-      <Table striped borderless hover variant="warning" responsive="sm">
-    <thead>
+    <Table striped borderless hover variant="warning" responsive="sm">
+      <thead>
         <tr>
           <th>Name</th>
           <th>Brewerie Type</th>
@@ -36,7 +41,7 @@ function BreweriesTable({ categoryData }) {
       {categoryData.map((item) => (
         <Brewerie key={item.id} item={item} />
       ))}
-      </Table>
+    </Table>
   );
 }
 
