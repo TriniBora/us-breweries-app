@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  height: 90vh;
+  min-height: 90vh;
   margin-top: 5vh;
   border-radius: 10px;
   box-shadow: 2px 2px 8px 200px hsla(0, 0%, 20%, 0.4);
@@ -24,7 +24,7 @@
 }
 .alert-intro {
   width: 65%;
-  height: 50vh;
+  min-height: 50vh;
   font-size: xx-large;
   box-shadow: 2px 2px 8px 8px hsla(0, 0%, 20%, 0.4);
   background-color: transparent;

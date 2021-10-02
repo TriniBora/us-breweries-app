@@ -11,9 +11,9 @@ function BreweriesSubcategories({ name, category }) {
   const [categoryData, setCategoryData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
-  const [showTable, setShowTable] = useState(false);
+  const [ showTable, setShowTable ] = useState( false );
 
-  const handleChange = (event) => {
+ const handleChange = (event) => {
     setSelectedItem(event.target.value);
     setShowTable(true);
   };
@@ -43,7 +43,7 @@ function BreweriesSubcategories({ name, category }) {
         (result) => {
           setIsLoaded(true);
           setCategoryData(result);
-        //   console.log(result);
+          // console.log(result);
         },
         (error) => {
           setIsLoaded(true);
@@ -75,7 +75,7 @@ function BreweriesSubcategories({ name, category }) {
           ))}
           </Form.Select>
           </FloatingLabel>
-        {/* {console.log(selectedItem)} */}
+        {console.log(selectedItem)}
         {showTable && (
           <div className="table">
             <BreweriesTable categoryData={categoryData} />

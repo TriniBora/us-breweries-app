@@ -2,24 +2,33 @@ import React, { useState } from "react";
 import BreweriesSubcategories from "./BreweriesSubcategories";
 import "../css/BreweriesCategories.css";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
+
 const categories = [
   {
     value: "by_state",
     name: "state",
+    icon: "fa-solid fa-flag-usa",
   },
   {
     value: "by_city",
     name: "city",
+    icon: "fa-solid fa-city",
   },
   {
     value: "by_type",
     name: "type",
+    icon: "fa-solid fa-beer-mug-empty",
   },
   {
     value: "by_dist",
     name: "dist",
+    icon: "fa-solid fa-map-location",
   },
 ];
+
 
 function BreweriesCategories() {
   const [name, setName] = useState("");
@@ -45,8 +54,8 @@ function BreweriesCategories() {
                 name={ el.name }
                 checked={ name === el.name }
                 onChange={ handleChange }
-              />
-              { el.name }
+              /> <FontAwesomeIcon className="icon" id={ el.icon } icon={ el.icon} />
+              {/* { el.name } */}
             </label>
           </div> ) ) }
 
