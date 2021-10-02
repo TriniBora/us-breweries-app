@@ -6,12 +6,6 @@
   justify-content: center;
 }
 
-.categories {
-  background-color: hsla(50, 98%, 65%, 0.5);
-  height: 90vh;
-  width: 80%;
-}
-
 .container-intro {
   background-color: hsla(50, 98%, 65%, 0.5);
   background-image: url(../img/bg.jpg);
@@ -25,7 +19,7 @@
   height: 90vh;
   margin-top: 5vh;
   border-radius: 10px;
-  box-shadow: 2px 2px 8px 8px hsla(0, 0%, 20%, 0.4);
+  box-shadow: 2px 2px 8px 200px hsla(0, 0%, 20%, 0.4);
   background-blend-mode: luminosity;
 }
 .alert-intro {
@@ -49,4 +43,5 @@
   color: #664d03;
   background-color: hsla(46, 20%, 100%, 0.7);
   border-color: #ffecb5;
+
 }

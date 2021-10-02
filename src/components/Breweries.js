@@ -17,9 +17,9 @@ function Breweries() {
         <div className="container-intro">
           <Alert show={showIntro} variant="warning" className="alert-intro">
             <Alert.Heading className="alert-intro-header">
-              Finding craft beer?
+              Are you looking for craft beer?
             </Alert.Heading>
-            <p>Check out the full list of Breweries in U.S. and pick one!</p>
+            <p>Check out the full list of Breweries in the U.s. and pick one!</p>
             <hr />
             <div className="d-flex justify-content-center">
               <Button onClick={() => setShowIntro(false)} variant="success">
@@ -31,9 +31,7 @@ function Breweries() {
       ) : (
         <>
           <Header />
-          <div className="categories">
-            <BreweriesCategories />
-          </div>
+          <BreweriesCategories />
           <Footer />
         </>
       )}
