@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
 .body {
   width: inherit;
   display: flex;
@@ -29,14 +31,14 @@
   box-shadow: 2px 2px 8px 8px hsla(0, 0%, 20%, 0.4);
   background-color: transparent;
   text-align: center;
-  /* margin: 0 auto; */
   padding: 50px;
 }
 
 .alert-intro-header {
-  font-size: xx-large;
-  text-transform: uppercase;
+  font-size: 1.5em;
+  /* text-transform: uppercase; */
   margin-bottom: 20px;
+  font-family: 'Berkshire Swash', cursive;
 }
 
 .alert-warning {

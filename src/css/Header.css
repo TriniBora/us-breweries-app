@@ -12,8 +12,7 @@
 
 h1{
   color: rgba(255, 255, 255, 1);
-  padding-left: .5em;
   font-size: 3em;
-  text-transform: uppercase;
-  font-family: 'Kaushan Script', cursive;
+  margin:0 auto;
+  font-family: 'Berkshire Swash', cursive;
   }

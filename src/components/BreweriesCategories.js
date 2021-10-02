@@ -22,11 +22,7 @@ const categories = [
     name: "type",
     icon: "fa-solid fa-beer-mug-empty",
   },
-  {
-    value: "by_dist",
-    name: "dist",
-    icon: "fa-solid fa-map-location",
-  },
+
 ];
 
 
@@ -43,10 +39,11 @@ function BreweriesCategories() {
   };
 
   return (
-    <>
+    <div className="body-container">
       <div className="categories">
         { categories.map( el => (
           <div key={ el.name } className="category" id={ el.name }>
+            <h3>Search by { el.name }</h3>
             <label>
               <input
                 type="radio"
@@ -55,7 +52,7 @@ function BreweriesCategories() {
                 checked={ name === el.name }
                 onChange={ handleChange }
               /> <FontAwesomeIcon className="icon" id={ el.icon } icon={ el.icon} />
-              {/* { el.name } */}
+
             </label>
           </div> ) ) }
 
@@ -92,7 +89,7 @@ function BreweriesCategories() {
           <BreweriesSubcategories name={name} category={category} />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
