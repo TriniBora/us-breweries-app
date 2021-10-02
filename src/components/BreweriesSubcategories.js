@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import BreweriesTable from "./BreweriesTable";
-import '../css/BreweriesSubcategories.css'
 
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
+import Spinner from "react-bootstrap/Spinner";
 
 function BreweriesSubcategories({ name, category }) {
   const [selectedItem, setSelectedItem] = useState("");
@@ -11,9 +11,9 @@ function BreweriesSubcategories({ name, category }) {
   const [categoryData, setCategoryData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
-  const [ showTable, setShowTable ] = useState( false );
+  const [showTable, setShowTable] = useState(false);
 
- const handleChange = (event) => {
+  const handleChange = (event) => {
     setSelectedItem(event.target.value);
     setShowTable(true);
   };
@@ -25,7 +25,7 @@ function BreweriesSubcategories({ name, category }) {
         (result) => {
           setIsLoaded(true);
           setBreweriesData(result);
-        //   console.log(result);
+          //   console.log(result);
         },
         (error) => {
           setIsLoaded(true);
@@ -37,7 +37,7 @@ function BreweriesSubcategories({ name, category }) {
   useEffect(() => {
     fetch(
       `https://api.openbrewerydb.org/breweries?${category}=${selectedItem.toLowerCase()}`
-    )//filtered list
+    ) //filtered list
       .then((response) => response.json())
       .then(
         (result) => {
@@ -55,26 +55,34 @@ function BreweriesSubcategories({ name, category }) {
   const eliminateDuplicates = (breweriesData, category) =>
     category === "by_state"
       ? [...new Set(breweriesData.map((el) => el.state))]
-      : [...new Set(breweriesData.map((el) => el.brewery_type))];
+      : category === "by_type"
+      ? [...new Set(breweriesData.map((el) => el.brewery_type))]
+      : [...new Set(breweriesData.map((el) => el.city))];
 
   const elNoRepeat = eliminateDuplicates(breweriesData, category);
 
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
   } else {
     return (
       <div>
-        <FloatingLabel controlId="floatingSelect" label={name}>
-            <Form.Select name={name} onChange={handleChange}>
-          {elNoRepeat.map((el) => (
-            <option key={el} value={el}>
-              {el}
-            </option>
-          ))}
+        <FloatingLabel controlId="floatingSelect" label={name.toUpperCase()}>
+          <Form.Select name={name} id="itemSelected" onChange={handleChange}>
+            {elNoRepeat.map((el) => (
+              <option key={el} value={el}>
+                {el}
+              </option>
+            ))}
           </Form.Select>
-          </FloatingLabel>
+        </FloatingLabel>
+        <br />
+
         {console.log(selectedItem)}
         {showTable && (
           <div className="table">

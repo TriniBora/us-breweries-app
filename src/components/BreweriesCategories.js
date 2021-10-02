@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import BreweriesSubcategories from "./BreweriesSubcategories";
 import "../css/BreweriesCategories.css";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const categories = [
   {
@@ -22,9 +20,7 @@ const categories = [
     name: "type",
     icon: "fa-solid fa-beer-mug-empty",
   },
-
 ];
-
 
 function BreweriesCategories() {
   const [name, setName] = useState("");
@@ -41,46 +37,21 @@ function BreweriesCategories() {
   return (
     <div className="body-container">
       <div className="categories">
-        { categories.map( el => (
-          <div key={ el.name } className="category" id={ el.name }>
-            <h3>Search by { el.name }</h3>
+        {categories.map((el) => (
+          <div key={el.name} className="category" id={el.name}>
+            <h3>Search by {el.name}</h3>
             <label>
               <input
                 type="radio"
-                value={ el.value }
-                name={ el.name }
-                checked={ name === el.name }
-                onChange={ handleChange }
-              /> <FontAwesomeIcon className="icon" id={ el.icon } icon={ el.icon} />
-
+                value={el.value}
+                name={el.name}
+                checked={name === el.name}
+                onChange={handleChange}
+              />{" "}
+              <FontAwesomeIcon className="icon" id={el.icon} icon={el.icon} />
             </label>
-          </div> ) ) }
-
-      {/* <div className="categories">
-        <div className="category" id="type">
-          <label>
-            <input
-              type="radio"
-              value="by_type"
-              name="type"
-              checked={name === "type"}
-              onChange={handleChange}
-            />
-            By type
-          </label>
-        </div>
-        <div className="category" id="state">
-          <label>
-            <input
-              type="radio"
-              name="state"
-              value="by_state"
-              checked={name === "state"}
-              onChange={handleChange}
-            />
-            By state
-          </label>
-        </div> */}
+          </div>
+        ))}
         {/* {console.log(category)}
         {console.log(name)} */}
       </div>

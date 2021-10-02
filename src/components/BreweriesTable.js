@@ -12,8 +12,8 @@ function Brewerie({ item }) {
         <td>{item.state}</td>
         <td>{item.city}</td>
         <td>
-          <a href={item.website_url} target="_blank" rel="noreferrer">
-            {item.website_url ? "Web Site" : "Nothing to show..."}
+          <a  id="brewery-url" href={item.website_url} target="_blank" rel="noreferrer">
+            {item.website_url ? "Web Site" : ""}
           </a>
         </td>
       </tr>
@@ -23,7 +23,7 @@ function Brewerie({ item }) {
 
 function BreweriesTable({ categoryData }) {
   return (
-      <Table striped bordered hover variant="dark" responsive="sm">
+      <Table striped borderless hover variant="warning" responsive="sm">
     <thead>
         <tr>
           <th>Name</th>
