@@ -1,4 +1,5 @@
-# TODO LIST
+# US-Brewveries List
+React App that consumes the public API Open Brewery DB (https://www.openbrewerydb.org/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
